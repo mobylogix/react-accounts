@@ -16,6 +16,15 @@ Package.onUse(function(api) {
     'ecmascript',
     'react',
     'twbs:bootstrap',
-    'kadira:flow-router'
-  ]);
+    'kadira:flow-router',
+    'fortawesome:fontawesome'
+  ], 'client');
+
+  api.addFiles([
+    'client/stylesheets/style.css',
+    'client/components/login.jsx',
+    'client/components/register.jsx',
+    'client/components/forgot-password.jsx',
+    'client/components/reset-password.jsx'
+  ], 'client');
 });
