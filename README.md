@@ -1,1 +1,1 @@
-<h1>React bootstrap package</h1>
+<h1>React accounts package</h1>
