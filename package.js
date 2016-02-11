@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'mobylogix:react-bootstrap-accounts',
+  name: 'mobylogix:react-accounts',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: 'React accounts package for user accounts managment.',
