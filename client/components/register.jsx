@@ -1,18 +1,16 @@
-Register = React.createClass({
-  propTypes: {
-    userType: React.PropTypes.string.isRequired,
-    loginRoute: React.PropTypes.string
-  },
-  defaultProps(){
+Accounts.Register = React.createClass({
+  getDefaultProps(){
     return {
       loginRoute: "/login"
     }
   },
+  propTypes: {
+    loginRoute: React.PropTypes.string
+  },
   handleSubmit( event ) {
     Meteor.call("addUser", {
       email: this.refs.emailAddress.value,
-      password: this.refs.password.value,
-      role: this.props.userType
+      password: this.refs.password.value
     }, function(err){
       if(err){
         alert(err.message);
@@ -41,7 +39,7 @@ Register = React.createClass({
     });
   },
   registerWithFacebook(){
-    if(this.props.userType === "customer"){
+    if(ServiceConfiguration.configurations.find({service: "facebook"}).count() > 0){
       return (
         <div className="at-oauth">
           <button className="btn at-social-btn" id="at-facebook" name="facebook" onClick={this.handleFacebookRegister}>
@@ -75,7 +73,7 @@ Register = React.createClass({
             </div>
 
             <div className="form-group">
-              <input type="submit" className="btn btn-success" value="Sign Up" />
+              <input type="submit" className="btn btn-primary" value="Sign Up" />
             </div>
 
           </form>
