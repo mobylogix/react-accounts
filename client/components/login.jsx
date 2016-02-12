@@ -1,16 +1,9 @@
 Accounts.Login = React.createClass({
-  getDefaultProps(){
+  getInitialState(){
     return{
-      forgotPasswordRoute: "/forgot-password",
-      registerRoute: "/register"
+      forgotPasswordRoute: Accounts.config.forgotPasswordRoute,
+      registerRoute: Accounts.config.registerRoute
     }
-  },
-  propTypes: {
-    forgotPasswordRoute: React.PropTypes.string,
-    registerRoute: React.PropTypes.string
-  },
-  componentDidMount(){
-    console.log(this.props);
   },
   handleSubmit(event) {
     event.preventDefault();
@@ -67,7 +60,7 @@ Accounts.Login = React.createClass({
             </div>
 
             <div className="form-group">
-              <a href={this.props.forgotPasswordRoute}>Forgot Password?</a>
+              <a href={this.state.forgotPasswordRoute}>Forgot Password?</a>
              </div>
 
             <div className="form-group">
@@ -76,7 +69,7 @@ Accounts.Login = React.createClass({
 
           </form>
 
-          <p>Dont have an account? <a href={this.props.registerRoute}>Sign Up</a>.</p>
+          <p>Dont have an account? <a href={this.state.registerRoute}>Sign Up</a>.</p>
 
         </div>
       </div>
