@@ -1,4 +1,4 @@
-ResetPassword = React.createClass({
+Accounts.ResetPassword = React.createClass({
   componentDidMount() {
   },
   handleSubmit( event ) {
