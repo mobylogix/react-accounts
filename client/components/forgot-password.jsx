@@ -1,4 +1,4 @@
-ForgotPassword = React.createClass({
+Accounts.ForgotPassword = React.createClass({
   handleSubmit( event ) {
     event.preventDefault();
     Accounts.forgotPassword(this.refs.emailAddress.value);
