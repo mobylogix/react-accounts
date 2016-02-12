@@ -17,14 +17,22 @@ Package.onUse(function(api) {
     'react',
     'twbs:bootstrap',
     'kadira:flow-router',
-    'fortawesome:fontawesome'
+    'fortawesome:fontawesome',
+    'service-configuration'
   ], 'client');
 
   api.addFiles([
     'client/stylesheets/style.css',
+    'client/lib/init.js',
     'client/components/login.jsx',
     'client/components/register.jsx',
     'client/components/forgot-password.jsx',
     'client/components/reset-password.jsx'
   ], 'client');
+
+  api.addFiles([
+    'lib/accounts.js'
+  ], 'server');
+
+  api.export('Accounts', 'client');
 });
