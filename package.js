@@ -2,7 +2,7 @@ Package.describe({
   name: 'mobylogix:react-accounts',
   version: '0.0.1',
   // Brief, one-line summary of the package.
-  summary: 'React accounts package for user accounts managment.',
+  summary: 'React user accounts managment package.',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/mobylogix/react-accounts',
   // By default, Meteor will default to using README.md for documentation.
