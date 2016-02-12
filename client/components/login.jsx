@@ -1,17 +1,16 @@
-Login = React.createClass({
-  propTypes: {
-    forgotPasswordRoute: React.PropTypes.string,
-    registerRoute: React.PropTypes.string,
-    facebookLogin: React.PropTypes.string,
-    isRegister: React.PropTypes.string
-  },
-  defaultProps(){
+Accounts.Login = React.createClass({
+  getDefaultProps(){
     return{
-      isRegister: "true",
-      facebookLogin: "true",
       forgotPasswordRoute: "/forgot-password",
       registerRoute: "/register"
     }
+  },
+  propTypes: {
+    forgotPasswordRoute: React.PropTypes.string,
+    registerRoute: React.PropTypes.string
+  },
+  componentDidMount(){
+    console.log(this.props);
   },
   handleSubmit(event) {
     event.preventDefault();
@@ -36,7 +35,7 @@ Login = React.createClass({
     });
   },
   facebookLogin(){
-    if(this.props.facebookLogin == "false")
+    if(ServiceConfiguration.configurations.find({service: "facebook"}).count() == 0)
       return;
 
     return (
@@ -46,11 +45,6 @@ Login = React.createClass({
         </button>
       </div>
     );
-  },
-  isRegister(){
-    if(this.props.isRegister == "true")
-        return <p>Dont have an account? <a href={this.props.registerRoute}>Sign Up</a>.</p>;
-    return;
   },
   render() {
     return (
@@ -81,6 +75,9 @@ Login = React.createClass({
             </div>
 
           </form>
+
+          <p>Dont have an account? <a href={this.props.registerRoute}>Sign Up</a>.</p>
+
         </div>
       </div>
     );
