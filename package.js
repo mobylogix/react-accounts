@@ -18,7 +18,8 @@ Package.onUse(function(api) {
     'twbs:bootstrap',
     'kadira:flow-router',
     'fortawesome:fontawesome',
-    'service-configuration'
+    'service-configuration',
+    'check'
   ], 'client');
 
   api.addFiles([
