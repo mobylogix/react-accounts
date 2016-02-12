@@ -1,11 +1,8 @@
 Accounts.Register = React.createClass({
-  getDefaultProps(){
-    return {
-      loginRoute: "/login"
+  getInitialState(){
+    return{
+      loginRoute: Accounts.config.loginRoute
     }
-  },
-  propTypes: {
-    loginRoute: React.PropTypes.string
   },
   handleSubmit( event ) {
     Meteor.call("addUser", {
@@ -77,7 +74,7 @@ Accounts.Register = React.createClass({
             </div>
 
           </form>
-          <p>Already have an account? <a href={this.props.loginRoute}>Log In</a>.</p>
+          <p>Already have an account? <a href={this.state.loginRoute}>Log In</a>.</p>
         </div>
       </div>
     );
